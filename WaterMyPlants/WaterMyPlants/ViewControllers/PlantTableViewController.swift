@@ -9,8 +9,11 @@ import UIKit
 
 class PlantTableViewController: UITableViewController {
 
+    let plantController = PlantController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     // MARK: - Table view data source
@@ -25,15 +28,15 @@ class PlantTableViewController: UITableViewController {
         return 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "plantCell", for: indexPath)
 
         // Configure the cell...
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -70,14 +73,17 @@ class PlantTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AddPlant" {
+            guard let destination = segue.destination as? AddPlantViewController else { return }
+        } else if segue.identifier == "PlantDetail" {
+            guard let destination = segue.destination as? PlantDetailViewController else { return }
+        }
     }
-    */
+    
 
 }

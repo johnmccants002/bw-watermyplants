@@ -23,6 +23,7 @@ class AddPlantViewController: UIViewController {
     
     @IBAction func addPhotoTapped(_ sender: UIButton) {
     }
+    
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
     }
     

@@ -24,6 +24,7 @@
 		3177CF8D25E75A9E00BE6AF3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF8C25E75A9E00BE6AF3 /* User.swift */; };
 		3177CF9225E75AAF00BE6AF3 /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF9125E75AAF00BE6AF3 /* PlantController.swift */; };
 		3177CF9725E75AD700BE6AF3 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF9625E75AD700BE6AF3 /* Plant.swift */; };
+		3177CF9C25E7654100BE6AF3 /* PlantFirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF9B25E7654100BE6AF3 /* PlantFirebaseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		3177CF8C25E75A9E00BE6AF3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3177CF9125E75AAF00BE6AF3 /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
 		3177CF9625E75AD700BE6AF3 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		3177CF9B25E7654100BE6AF3 /* PlantFirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantFirebaseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				3177CF9125E75AAF00BE6AF3 /* PlantController.swift */,
+				3177CF9B25E7654100BE6AF3 /* PlantFirebaseController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				3177CF6925E7529900BE6AF3 /* LoginViewController.swift in Sources */,
 				3177CF9225E75AAF00BE6AF3 /* PlantController.swift in Sources */,
 				3177CF8D25E75A9E00BE6AF3 /* User.swift in Sources */,
+				3177CF9C25E7654100BE6AF3 /* PlantFirebaseController.swift in Sources */,
 				3177CF3225E751C400BE6AF3 /* SceneDelegate.swift in Sources */,
 				3177CF8325E758EF00BE6AF3 /* PlantDetailViewController.swift in Sources */,
 				3177CF8825E75A7200BE6AF3 /* SettingsViewController.swift in Sources */,
