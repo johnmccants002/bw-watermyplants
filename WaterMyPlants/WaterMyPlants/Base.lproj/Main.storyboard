@@ -69,7 +69,7 @@
         <!--Plants-->
         <scene sceneID="rzl-oE-Dxu">
             <objects>
-                <tableViewController id="dwe-8D-r7H" sceneMemberID="viewController">
+                <tableViewController id="dwe-8D-r7H" customClass="PlantTableViewController" customModule="WaterMyPlants" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="b9w-O5-YA3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="4td-Oq-mPT" kind="show" id="Q3J-Gv-bpP"/>
+                                    <segue destination="4td-Oq-mPT" kind="show" identifier="PlantDetail" id="Q3J-Gv-bpP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -109,9 +109,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Plants" id="Cwi-oo-7b5">
+                        <barButtonItem key="leftBarButtonItem" image="gearshape" catalog="system" id="2b8-DS-vqS">
+                            <connections>
+                                <segue destination="EWU-mo-X7A" kind="show" id="Jly-vA-WtX"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ID8-vl-J5l">
                             <connections>
-                                <segue destination="8qU-J3-Ug1" kind="show" id="q1s-jc-zNd"/>
+                                <segue destination="8qU-J3-Ug1" kind="show" identifier="AddPlant" id="q1s-jc-zNd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -123,7 +128,7 @@
         <!--Plant-->
         <scene sceneID="gO6-nK-oIX">
             <objects>
-                <viewController id="4td-Oq-mPT" sceneMemberID="viewController">
+                <viewController id="4td-Oq-mPT" customClass="PlantDetailViewController" customModule="WaterMyPlants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WEv-IK-tmI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -193,12 +198,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qc1-mM-eSO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2879.7101449275365" y="-204.24107142857142"/>
+            <point key="canvasLocation" x="3052" y="394"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="qNq-aU-VgV">
+            <objects>
+                <viewController id="EWU-mo-X7A" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vdd-ij-zZA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="AgD-os-09q">
+                                <rect key="frame" x="20" y="128" width="374" height="184"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvb-v3-I9l">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CaS-AO-5UG">
+                                        <rect key="frame" x="0.0" y="45.5" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbY-bg-N5g">
+                                        <rect key="frame" x="0.0" y="104.5" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="doT-Pu-mMT">
+                                        <rect key="frame" x="0.0" y="150" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="184" id="5RH-UL-VTU"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nlk-Sa-tq7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nlk-Sa-tq7" firstAttribute="trailing" secondItem="AgD-os-09q" secondAttribute="trailing" constant="20" id="Zoi-pS-2Id"/>
+                            <constraint firstItem="AgD-os-09q" firstAttribute="top" secondItem="nlk-Sa-tq7" secondAttribute="top" constant="40" id="bLX-zj-71d"/>
+                            <constraint firstItem="AgD-os-09q" firstAttribute="leading" secondItem="nlk-Sa-tq7" secondAttribute="leading" constant="20" id="eF2-lr-M1C"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="rBh-Xy-ZJw">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="o3M-hi-XUl"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="59Q-QO-Uc8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1837.68115942029" y="-573.21428571428567"/>
         </scene>
         <!--Add Plant-->
         <scene sceneID="e6N-4l-Nhn">
             <objects>
-                <viewController id="8qU-J3-Ug1" sceneMemberID="viewController">
+                <viewController id="8qU-J3-Ug1" customClass="AddPlantViewController" customModule="WaterMyPlants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GtK-4s-N9o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -294,7 +354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fwk-Za-H2t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2879.7101449275365" y="466.74107142857139"/>
+            <point key="canvasLocation" x="3051" y="-285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SnW-cF-gZe">
@@ -316,6 +376,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

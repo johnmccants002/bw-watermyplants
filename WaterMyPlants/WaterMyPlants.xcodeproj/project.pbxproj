@@ -17,6 +17,9 @@
 		3177CF5525E751C700BE6AF3 /* WaterMyPlantsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF5425E751C700BE6AF3 /* WaterMyPlantsUITests.swift */; };
 		3177CF6925E7529900BE6AF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF6825E7529900BE6AF3 /* LoginViewController.swift */; };
 		3177CF7425E7534000BE6AF3 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3177CF7325E7534000BE6AF3 /* LoginView.xib */; };
+		3177CF7925E758B800BE6AF3 /* PlantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF7825E758B800BE6AF3 /* PlantTableViewController.swift */; };
+		3177CF7E25E758DA00BE6AF3 /* AddPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF7D25E758DA00BE6AF3 /* AddPlantViewController.swift */; };
+		3177CF8325E758EF00BE6AF3 /* PlantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF8225E758EF00BE6AF3 /* PlantDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		3177CF5625E751C700BE6AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3177CF6825E7529900BE6AF3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3177CF7325E7534000BE6AF3 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		3177CF7825E758B800BE6AF3 /* PlantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTableViewController.swift; sourceTree = "<group>"; };
+		3177CF7D25E758DA00BE6AF3 /* AddPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantViewController.swift; sourceTree = "<group>"; };
+		3177CF8225E758EF00BE6AF3 /* PlantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,9 @@
 			isa = PBXGroup;
 			children = (
 				3177CF6825E7529900BE6AF3 /* LoginViewController.swift */,
+				3177CF7825E758B800BE6AF3 /* PlantTableViewController.swift */,
+				3177CF7D25E758DA00BE6AF3 /* AddPlantViewController.swift */,
+				3177CF8225E758EF00BE6AF3 /* PlantDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -289,10 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3177CF7E25E758DA00BE6AF3 /* AddPlantViewController.swift in Sources */,
+				3177CF7925E758B800BE6AF3 /* PlantTableViewController.swift in Sources */,
 				3177CF3A25E751C400BE6AF3 /* WaterMyPlants.xcdatamodeld in Sources */,
 				3177CF3025E751C400BE6AF3 /* AppDelegate.swift in Sources */,
 				3177CF6925E7529900BE6AF3 /* LoginViewController.swift in Sources */,
 				3177CF3225E751C400BE6AF3 /* SceneDelegate.swift in Sources */,
+				3177CF8325E758EF00BE6AF3 /* PlantDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
