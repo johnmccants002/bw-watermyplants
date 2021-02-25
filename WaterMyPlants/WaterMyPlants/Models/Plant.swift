@@ -9,12 +9,14 @@ import Foundation
 import UIKit
 
 class Plant {
+    var id : Int
     var nickname : String
     var species : String
     var h2oFrequency: String
     var image : UIImage?
     
-    init(nickname: String, species: String, h2oFrequency: String) {
+    init(id: Int, nickname: String, species: String, h2oFrequency: String) {
+        self.id = id
         self.nickname = nickname
         self.species = species
         self.h2oFrequency = h2oFrequency

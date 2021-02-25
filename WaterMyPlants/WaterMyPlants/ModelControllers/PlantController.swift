@@ -9,4 +9,20 @@ import Foundation
 
 class PlantController {
     
+    let shared = PlantController()
+    
+    func addPlant() {
+        
+    }
+    
+    func deletePlant() {
+        
+    }
+    
+    func updatePlant() {
+        
+    }
+    
+    
+    
 }

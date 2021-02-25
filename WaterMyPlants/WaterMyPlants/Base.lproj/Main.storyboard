@@ -61,6 +61,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="loginSegmentedControl" destination="xV6-1G-Unf" id="iKj-GM-Dze"/>
+                        <outlet property="passwordTextField" destination="r7b-Mm-0k7" id="3hl-fV-v1Z"/>
+                        <outlet property="usernameTextField" destination="FmS-OX-8dA" id="Rgs-c7-ujI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -250,6 +255,10 @@
                     <navigationItem key="navigationItem" title="Settings" id="rBh-Xy-ZJw">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="o3M-hi-XUl"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="passwordTextField" destination="doT-Pu-mMT" id="cn9-BW-OsZ"/>
+                        <outlet property="usernameTextField" destination="CaS-AO-5UG" id="HSK-LN-BN8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59Q-QO-Uc8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -314,6 +323,9 @@
                                     <constraint firstAttribute="height" constant="30" id="CNj-07-fwV"/>
                                 </constraints>
                                 <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhotoTapped:" destination="8qU-J3-Ug1" eventType="touchUpInside" id="22q-rr-2bY"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gsq-bm-X6p">
                                 <rect key="frame" x="137" y="384" width="141" height="141"/>
@@ -349,8 +361,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Plant" id="YIt-WY-TfQ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ee0-SH-RfD"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ee0-SH-RfD">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="8qU-J3-Ug1" id="HSj-oe-h1k"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addPhotoButton" destination="3j4-JW-xmU" id="HKp-Rw-zfH"/>
+                        <outlet property="frequencySegControl" destination="fWw-pL-oK2" id="zkm-0X-Hv8"/>
+                        <outlet property="plantImageView" destination="gsq-bm-X6p" id="zvj-0r-PIS"/>
+                        <outlet property="plantNicknameTextField" destination="FhE-uA-m0l" id="XsF-Sd-Nkg"/>
+                        <outlet property="saveButton" destination="ee0-SH-RfD" id="uAG-w9-GEi"/>
+                        <outlet property="speciesTextField" destination="qst-eE-uxh" id="Uuh-fC-XN2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fwk-Za-H2t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

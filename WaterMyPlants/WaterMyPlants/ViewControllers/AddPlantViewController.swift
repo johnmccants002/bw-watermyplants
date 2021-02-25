@@ -9,13 +9,23 @@ import UIKit
 
 class AddPlantViewController: UIViewController {
 
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var addPhotoButton: UIButton!
+    @IBOutlet weak var plantImageView: UIImageView!
+    @IBOutlet weak var frequencySegControl: UISegmentedControl!
+    @IBOutlet weak var plantNicknameTextField: UITextField!
+    @IBOutlet weak var speciesTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func addPhotoTapped(_ sender: UIButton) {
+    }
+    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -25,5 +35,9 @@ class AddPlantViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+}
+
+extension AddPlantViewController: UITextFieldDelegate {
 
 }
