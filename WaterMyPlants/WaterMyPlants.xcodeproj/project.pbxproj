@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		3177CF3025E751C400BE6AF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF2F25E751C400BE6AF3 /* AppDelegate.swift */; };
 		3177CF3225E751C400BE6AF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF3125E751C400BE6AF3 /* SceneDelegate.swift */; };
-		3177CF3425E751C400BE6AF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF3325E751C400BE6AF3 /* ViewController.swift */; };
 		3177CF3725E751C400BE6AF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3177CF3525E751C400BE6AF3 /* Main.storyboard */; };
 		3177CF3A25E751C400BE6AF3 /* WaterMyPlants.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF3825E751C400BE6AF3 /* WaterMyPlants.xcdatamodeld */; };
 		3177CF3C25E751C700BE6AF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3177CF3B25E751C700BE6AF3 /* Assets.xcassets */; };
 		3177CF3F25E751C700BE6AF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3177CF3D25E751C700BE6AF3 /* LaunchScreen.storyboard */; };
 		3177CF4A25E751C700BE6AF3 /* WaterMyPlantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF4925E751C700BE6AF3 /* WaterMyPlantsTests.swift */; };
 		3177CF5525E751C700BE6AF3 /* WaterMyPlantsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF5425E751C700BE6AF3 /* WaterMyPlantsUITests.swift */; };
+		3177CF6925E7529900BE6AF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF6825E7529900BE6AF3 /* LoginViewController.swift */; };
+		3177CF7425E7534000BE6AF3 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3177CF7325E7534000BE6AF3 /* LoginView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,6 @@
 		3177CF2C25E751C400BE6AF3 /* WaterMyPlants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterMyPlants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3177CF2F25E751C400BE6AF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3177CF3125E751C400BE6AF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3177CF3325E751C400BE6AF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3177CF3625E751C400BE6AF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3177CF3925E751C400BE6AF3 /* WaterMyPlants.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WaterMyPlants.xcdatamodel; sourceTree = "<group>"; };
 		3177CF3B25E751C700BE6AF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +51,8 @@
 		3177CF5025E751C700BE6AF3 /* WaterMyPlantsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterMyPlantsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3177CF5425E751C700BE6AF3 /* WaterMyPlantsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterMyPlantsUITests.swift; sourceTree = "<group>"; };
 		3177CF5625E751C700BE6AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3177CF6825E7529900BE6AF3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3177CF7325E7534000BE6AF3 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +103,13 @@
 		3177CF2E25E751C400BE6AF3 /* WaterMyPlants */ = {
 			isa = PBXGroup;
 			children = (
+				3177CF6525E7525600BE6AF3 /* Models */,
+				3177CF6725E7526A00BE6AF3 /* ModelControllers */,
+				3177CF6625E7525D00BE6AF3 /* ViewControllers */,
 				3177CF2F25E751C400BE6AF3 /* AppDelegate.swift */,
 				3177CF3125E751C400BE6AF3 /* SceneDelegate.swift */,
-				3177CF3325E751C400BE6AF3 /* ViewController.swift */,
 				3177CF3525E751C400BE6AF3 /* Main.storyboard */,
+				3177CF7325E7534000BE6AF3 /* LoginView.xib */,
 				3177CF3B25E751C700BE6AF3 /* Assets.xcassets */,
 				3177CF3D25E751C700BE6AF3 /* LaunchScreen.storyboard */,
 				3177CF4025E751C700BE6AF3 /* Info.plist */,
@@ -129,6 +134,28 @@
 				3177CF5625E751C700BE6AF3 /* Info.plist */,
 			);
 			path = WaterMyPlantsUITests;
+			sourceTree = "<group>";
+		};
+		3177CF6525E7525600BE6AF3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3177CF6625E7525D00BE6AF3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3177CF6825E7529900BE6AF3 /* LoginViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3177CF6725E7526A00BE6AF3 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +263,7 @@
 			files = (
 				3177CF3F25E751C700BE6AF3 /* LaunchScreen.storyboard in Resources */,
 				3177CF3C25E751C700BE6AF3 /* Assets.xcassets in Resources */,
+				3177CF7425E7534000BE6AF3 /* LoginView.xib in Resources */,
 				3177CF3725E751C400BE6AF3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,9 +289,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3177CF3425E751C400BE6AF3 /* ViewController.swift in Sources */,
 				3177CF3A25E751C400BE6AF3 /* WaterMyPlants.xcdatamodeld in Sources */,
 				3177CF3025E751C400BE6AF3 /* AppDelegate.swift in Sources */,
+				3177CF6925E7529900BE6AF3 /* LoginViewController.swift in Sources */,
 				3177CF3225E751C400BE6AF3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
