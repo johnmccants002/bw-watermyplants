@@ -9,7 +9,7 @@ import Foundation
 
 class PlantController {
     
-    let shared = PlantController()
+    var plants : [Plant] = []
     
     func addPlant() {
         

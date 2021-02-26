@@ -7,7 +7,10 @@
 
 import UIKit
 
-class AddPlantViewController: UIViewController {
+class AddPlantViewController: UIViewController, UINavigationControllerDelegate {
+    
+    var plantController : PlantController?
+    var plantImage : UIImage?
 
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var addPhotoButton: UIButton!
@@ -15,6 +18,7 @@ class AddPlantViewController: UIViewController {
     @IBOutlet weak var frequencySegControl: UISegmentedControl!
     @IBOutlet weak var plantNicknameTextField: UITextField!
     @IBOutlet weak var speciesTextField: UITextField!
+    var id : Int = 1000
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,9 +26,48 @@ class AddPlantViewController: UIViewController {
     }
     
     @IBAction func addPhotoTapped(_ sender: UIButton) {
+        cameraButtonPressed()
     }
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+        
+        guard let plantController = plantController else { return }
+        guard let plantNickname = plantNicknameTextField.text, !plantNickname.isEmpty else {
+            return
+        }
+        
+        guard let plantSpecies = speciesTextField.text, !plantSpecies.isEmpty else {return}
+        
+        let plantID = id + plantController.plants.count
+        
+        guard let plantImage = plantImage else {
+            Plant(frequency: "Often", id: plantID, image: nil, nickname: plantNickname, species: plantSpecies, timestamp: Date())
+            do {
+                try CoreDataStack.shared.managedObjectContext.save()
+            } catch {
+                print("Error saving the object")
+            }
+
+        self.navigationController?.popViewController(animated: true)
+            return
+
+        }
+        Plant(frequency: "Often", id: plantID, image: plantImage.pngData(), nickname: plantNickname, species: plantSpecies, timestamp: Date())
+        
+        do {
+            try CoreDataStack.shared.managedObjectContext.save()
+        } catch {
+            print("Error saving object: \(error)")
+        }
+
+        
+        self.navigationController?.popViewController(animated: true)
+        
+        
+    }
+        
+    func presentAlert() {
+        
     }
     
     /*
@@ -42,3 +85,22 @@ class AddPlantViewController: UIViewController {
 extension AddPlantViewController: UITextFieldDelegate {
 
 }
+
+extension AddPlantViewController: UIImagePickerControllerDelegate {
+    
+    @objc func cameraButtonPressed() {
+    let picker = UIImagePickerController()
+    picker.delegate = self
+    picker.allowsEditing = true
+    picker.sourceType = .photoLibrary
+    present(picker, animated: true)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    guard let userPickedImage = info[.editedImage] as? UIImage else { return }
+    plantImageView.image = userPickedImage
+    self.plantImage = userPickedImage
+    picker.dismiss(animated: true)
+    }
+    
+}
+                                
