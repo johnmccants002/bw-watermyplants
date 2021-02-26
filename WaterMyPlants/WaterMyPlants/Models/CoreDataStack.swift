@@ -47,8 +47,8 @@ class CoreDataStack {
         let persistentStoreURL = documentsDirectoryURL.appendingPathComponent(storeName)
 
         do {
-            let options = [ NSInferMappingModelAutomaticallyOption : true,
-                            NSMigratePersistentStoresAutomaticallyOption : true]
+            let options = [ NSInferMappingModelAutomaticallyOption: true,
+                            NSMigratePersistentStoresAutomaticallyOption: true]
 
             try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType,
                                                               configurationName: nil,
@@ -94,9 +94,7 @@ class CoreDataStack {
         fetchRequest.returnsObjectsAsFaults = false
         let context = CoreDataStack.shared.managedObjectContext
         fetchRequest.predicate = NSPredicate(format:"timestamp = %@", plant.timestamp! as CVarArg)
-        
-        
-        
+
         let result = try? context.fetch(fetchRequest)
         print(result?.count)
         if result?.count == 1 {

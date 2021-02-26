@@ -12,4 +12,5 @@ import CoreData
 @objc(Plant)
 public class Plant: NSManagedObject {
 
+    var plantContext: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext
 }

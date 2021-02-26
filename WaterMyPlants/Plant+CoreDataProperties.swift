@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension Plant {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Plant> {
@@ -22,7 +21,6 @@ extension Plant {
     @NSManaged public var nickname: String?
     @NSManaged public var species: String?
     @NSManaged public var timestamp: Date?
-    
     @discardableResult convenience init(frequency: String?, id: Int, image: Data?, nickname: String?, species: String?, timestamp: Date?, context: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext) {
         self.init(context: context)
         self.id = Int16(id)
@@ -32,10 +30,8 @@ extension Plant {
         self.frequency = frequency
         self.timestamp = timestamp
     }
-
-
 }
 
-extension Plant : Identifiable {
+extension Plant: Identifiable {
 
 }

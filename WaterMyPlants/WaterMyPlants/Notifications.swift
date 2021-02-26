@@ -24,7 +24,7 @@ class LocalNotifications {
         notificationContent.badge = NSNumber(value: 1)
         notificationContent.sound = .default
 
-        var timeInterval : Double = 0
+        var timeInterval: Double = 0
         switch plant.frequency {
         case "Once a day":
             timeInterval = 86400
@@ -39,16 +39,13 @@ class LocalNotifications {
         }
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: notificationContent, trigger: trigger)
-        UNUserNotificationCenter.current().add(request) { (error : Error?) in
+        UNUserNotificationCenter.current().add(request) { (error: Error?) in
                             if let error = error {
                                 print("Error: \(error)")
                             }
                         }
-        
         return alertController(navigationController: navigationController, plantName: plantName, timeInterval: timeInterval)
-        
     }
-    
     func requestPermission() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             if success {
@@ -58,8 +55,7 @@ class LocalNotifications {
             }
         }
     }
-    
-    func alertController(navigationController : UINavigationController, plantName: String, timeInterval: Double) -> UIAlertController {
+    func alertController(navigationController: UINavigationController, plantName: String, timeInterval: Double) -> UIAlertController {
         var timeIntervalString = ""
         switch timeInterval {
         case 10:
@@ -81,4 +77,3 @@ class LocalNotifications {
         return alertController
     }
 }
-

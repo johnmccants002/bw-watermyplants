@@ -9,20 +9,13 @@ import Foundation
 
 class PlantController {
     
-    var plants : [Plant] = []
+    var plants: [Plant] = []
     
     func addPlant() {
         
     }
-    
     func deletePlant() {
-        
     }
-    
     func updatePlant() {
-        
     }
-    
-    
-    
 }
