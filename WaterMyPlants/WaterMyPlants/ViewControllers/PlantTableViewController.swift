@@ -11,6 +11,7 @@ import CoreData
 class PlantTableViewController: UITableViewController {
 
     let plantController = PlantController()
+    let localNotifications = LocalNotifications()
     
     lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
             
@@ -35,6 +36,7 @@ class PlantTableViewController: UITableViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(reload), name: .plantUpdated, object: nil)
         updateViews()
+        localNotifications.requestPermission()
     }
     
     func updateViews() {
@@ -67,41 +69,25 @@ class PlantTableViewController: UITableViewController {
         return cell
     }
 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            let plant = fetchedResultsController.object(at: indexPath)
+            let moc = CoreDataStack.shared.managedObjectContext
+            moc.delete(plant)
+            
+            do {
+                try moc.save()
+            } catch {
+                moc.reset()
+                NSLog("Error saving managed object: \(error)")
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.updateViews()
+            }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     
     // MARK: - Navigation
@@ -117,6 +103,7 @@ class PlantTableViewController: UITableViewController {
             let selectedPlant = self.fetchedResultsController.object(at: selectedNumber)
             destination.plant = selectedPlant
             destination.object = CoreDataStack.shared.managedObjectContext.object(with: selectedPlant.objectID)
+            destination.localNotifications = self.localNotifications
             
         }
     }

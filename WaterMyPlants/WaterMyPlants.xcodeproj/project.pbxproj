@@ -25,7 +25,6 @@
 		3177CF8825E75A7200BE6AF3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF8725E75A7200BE6AF3 /* SettingsViewController.swift */; };
 		3177CF8D25E75A9E00BE6AF3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF8C25E75A9E00BE6AF3 /* User.swift */; };
 		3177CF9225E75AAF00BE6AF3 /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF9125E75AAF00BE6AF3 /* PlantController.swift */; };
-		3177CF9725E75AD700BE6AF3 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF9625E75AD700BE6AF3 /* Plant.swift */; };
 		3177CF9C25E7654100BE6AF3 /* PlantFirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CF9B25E7654100BE6AF3 /* PlantFirebaseController.swift */; };
 		3177CFA225E76D2A00BE6AF3 /* Plant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CFA025E76D2A00BE6AF3 /* Plant+CoreDataClass.swift */; };
 		3177CFA325E76D2A00BE6AF3 /* Plant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177CFA125E76D2A00BE6AF3 /* Plant+CoreDataProperties.swift */; };
@@ -75,7 +74,6 @@
 		3177CF8725E75A7200BE6AF3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3177CF8C25E75A9E00BE6AF3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3177CF9125E75AAF00BE6AF3 /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
-		3177CF9625E75AD700BE6AF3 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		3177CF9B25E7654100BE6AF3 /* PlantFirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantFirebaseController.swift; sourceTree = "<group>"; };
 		3177CFA025E76D2A00BE6AF3 /* Plant+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3177CFA125E76D2A00BE6AF3 /* Plant+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				3177CF8C25E75A9E00BE6AF3 /* User.swift */,
-				3177CF9625E75AD700BE6AF3 /* Plant.swift */,
 				3177CFA725E7A91100BE6AF3 /* CoreDataStack.swift */,
 			);
 			path = Models;
@@ -333,7 +330,6 @@
 				3177CF7E25E758DA00BE6AF3 /* AddPlantViewController.swift in Sources */,
 				3177CF7925E758B800BE6AF3 /* PlantTableViewController.swift in Sources */,
 				3177CF3A25E751C400BE6AF3 /* WaterMyPlants.xcdatamodeld in Sources */,
-				3177CF9725E75AD700BE6AF3 /* Plant.swift in Sources */,
 				3177CF3025E751C400BE6AF3 /* AppDelegate.swift in Sources */,
 				3177CF6925E7529900BE6AF3 /* LoginViewController.swift in Sources */,
 				3126E1C425E8A494001EF8AB /* EditViewController.swift in Sources */,

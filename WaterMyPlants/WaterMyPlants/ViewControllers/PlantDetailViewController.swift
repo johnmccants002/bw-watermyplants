@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 
 class PlantDetailViewController: UIViewController {
@@ -19,7 +20,7 @@ class PlantDetailViewController: UIViewController {
     @IBOutlet weak var nicknameLabel: UILabel!
     var plant : Plant?
     var object : NSManagedObject?
-    var editMode : Bool = false
+    var localNotifications : LocalNotifications?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,24 +52,17 @@ class PlantDetailViewController: UIViewController {
     }
     
     @IBAction func plantButtonTapped(_ sender: UIButton) {
-        if sender.titleLabel?.text == "Delete Plant" {
-            deletePlant()
-            self.navigationController?.popViewController(animated: true)
-        }
+        guard let plant = plant, let navigationController = self.navigationController else { return }
+        guard let localNotifications = localNotifications else { return }
+        let alertController = localNotifications.waterPlantNotification(plant: plant, navigationController: navigationController)
+        guard let alertControllerNotNil = alertController else { return }
+        
+        self.present(alertControllerNotNil, animated: true, completion: nil)
     }
     
     @IBAction func editButtonTapped(_ sender: UIBarButtonItem) {
-//        if editMode == false {
-//            editMode.toggle()
-//            plantButton.setTitle("Delete Plant", for: .normal)
-//            sender.title = "Done" }
-//        else if editMode == true {
-//            editMode.toggle()
-//            plantButton.setTitle("Water Plant", for: .normal)
-//            sender.title = "Edit"
-//        }
+
     }
-    
 
     // MARK: - Navigation
 

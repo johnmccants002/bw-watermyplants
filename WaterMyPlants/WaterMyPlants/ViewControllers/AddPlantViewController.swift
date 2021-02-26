@@ -22,7 +22,7 @@ class AddPlantViewController: UIViewController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        segControlString()
     }
     
     @IBAction func addPhotoTapped(_ sender: UIButton) {
@@ -41,7 +41,7 @@ class AddPlantViewController: UIViewController, UINavigationControllerDelegate {
         let plantID = id + plantController.plants.count
         
         guard let plantImage = plantImage else {
-            Plant(frequency: "Often", id: plantID, image: nil, nickname: plantNickname, species: plantSpecies, timestamp: Date())
+            Plant(frequency: segControlString(), id: plantID, image: nil, nickname: plantNickname, species: plantSpecies, timestamp: Date())
             do {
                 try CoreDataStack.shared.managedObjectContext.save()
             } catch {
@@ -52,7 +52,7 @@ class AddPlantViewController: UIViewController, UINavigationControllerDelegate {
             return
 
         }
-        Plant(frequency: "Often", id: plantID, image: plantImage.pngData(), nickname: plantNickname, species: plantSpecies, timestamp: Date())
+        Plant(frequency: segControlString(), id: plantID, image: plantImage.pngData(), nickname: plantNickname, species: plantSpecies, timestamp: Date())
         
         do {
             try CoreDataStack.shared.managedObjectContext.save()
@@ -66,8 +66,10 @@ class AddPlantViewController: UIViewController, UINavigationControllerDelegate {
         
     }
         
-    func presentAlert() {
-        
+    func segControlString() -> String {
+        guard let title = self.frequencySegControl.titleForSegment(at: self.frequencySegControl.selectedSegmentIndex) else {return "Often"}
+        print(title)
+        return title
     }
     
     /*
