@@ -26,7 +26,6 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginSignUpButtonTapped(_ sender: UIButton) {
-        
         guard let emailText = emailTextField.text, !emailText.isEmpty else {
             presentAlert(missingField: "Email")
             return }
@@ -40,11 +39,9 @@ class LoginViewController: UIViewController {
             
             Auth.auth().createUser(withEmail: emailText, password: passwordText) { (authDataResult, error) in
                 
-                
                 if error != nil {
                     self.presentAlert(missingField: "Unable to create a user")
                 }
-                print(authDataResult?.user.email)
                 if let authData = authDataResult, let authEmail = authData.user.email {
                     print(authEmail)
                     var dict: [String: Any] = [
@@ -82,6 +79,7 @@ class LoginViewController: UIViewController {
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                 UserDefaults.standard.set(authData.user.uid, forKey: "uid")
                 UserDefaults.standard.synchronize()
+                self.user = User(username: "", email: emailText, uid: authData.user.uid)
                 let nav = UINavigationController(rootViewController: centerVC)
                 nav.modalPresentationStyle = .fullScreen
                 self.present(nav, animated: true, completion: nil)

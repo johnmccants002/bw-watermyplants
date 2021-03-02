@@ -39,6 +39,7 @@ class PlantTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(reload), name: .plantUpdated, object: nil)
         updateViews()
         localNotifications.requestPermission()
+        PlantFirebaseController.shared.getUsername()
     }
     
     func updateViews() {
@@ -107,6 +108,9 @@ class PlantTableViewController: UITableViewController {
             destination.object = CoreDataStack.shared.managedObjectContext.object(with: selectedPlant.objectID)
             destination.localNotifications = self.localNotifications
             
+        } else if segue.identifier == "Settings" {
+            guard let destination = segue.destination as? SettingsViewController else { return }
+            destination.user = self.user
         }
     }
     

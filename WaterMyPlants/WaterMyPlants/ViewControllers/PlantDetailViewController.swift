@@ -36,12 +36,14 @@ class PlantDetailViewController: UIViewController {
     }
     
     func updateViews() {
-        guard let plant = plant else { return }
+        guard let plant = plant, let frequency = plant.frequency, let species = plant.species, let nickname = plant.nickname else { return }
         
-        self.h20Label.text = plant.frequency
-        self.speciesLabel.text = plant.species
-        self.nicknameLabel.text = plant.nickname
-        guard let image = plant.image else { return }
+        self.h20Label.text = "Frequency: \(frequency)"
+        self.speciesLabel.text = "Species: \(species)"
+        self.nicknameLabel.text = "Nickname: \(nickname)"
+        guard let image = plant.image else {
+            self.plantImageView.image = UIImage(named: "plant")
+            return }
         self.plantImageView.image = UIImage(data: image)
         
     }

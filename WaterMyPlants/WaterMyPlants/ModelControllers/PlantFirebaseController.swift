@@ -37,6 +37,8 @@ class PlantFirebaseController {
         private let firebaseURL = "https://plantapp-2fe47-default-rtdb.firebaseio.com/"
         let ref = Database.database().reference()
         var currentUser: User?
+        var username = ""
+        
         
         static let shared = PlantFirebaseController()
         private init() { }
@@ -49,6 +51,8 @@ class PlantFirebaseController {
                         "username": username,
                         "email": authResult.user.email
                         ]
+                
+                self.currentUser = User(username: username, email: email, uid: authResult.user.uid)
                 print(self.ref.url)
                     Database.database().reference().child("users").child(authResult.user.uid).updateChildValues(dict, withCompletionBlock: { (error, _) in
                         if error == nil {
@@ -62,4 +66,37 @@ class PlantFirebaseController {
             }
         }
     }
+    func getUsername() {
+        
+        guard let uid = UserDefaults.standard.value(forKey: "uid") else {
+            return }
+        self.ref.child("users/\(uid)/username").getData { (error, snapshot) in
+            if let error = error {
+                print("Error getting data \(error)")
+            }
+            else if snapshot.exists() {
+                print("Got data \(snapshot.value!)")
+                self.username = snapshot.value as! String
+            }
+            else {
+                print("No data available")
+            }
+        }
+    }
+    
+    func updateUsername(username: String) {
+        if let userID = Auth.auth().currentUser?.uid {
+            var dict: [String: Any] = [
+            "username": username
+            ]
+            Database.database().reference().child("users").child(userID).updateChildValues(dict, withCompletionBlock: { (error, _) in
+                if error == nil {
+                    print("Done")
+                 
+                }
+            })
+          }
+    }
+    
+    
 }

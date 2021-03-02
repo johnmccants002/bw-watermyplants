@@ -70,7 +70,7 @@
                                     <constraint firstAttribute="height" constant="34" id="nuU-G7-1TG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AF6-ll-PQ7">
                                 <rect key="frame" x="20" y="582" width="374" height="21"/>
@@ -139,6 +139,7 @@
                         <outlet property="passwordTextField" destination="r7b-Mm-0k7" id="3hl-fV-v1Z"/>
                         <outlet property="usernameLabel" destination="AF6-ll-PQ7" id="Hio-2a-HOe"/>
                         <outlet property="usernameTextField" destination="qPp-oa-gNd" id="M0b-Yl-pDf"/>
+                        <segue destination="TDf-2v-p8h" kind="presentation" identifier="SignedIn" modalPresentationStyle="fullScreen" id="NSI-mE-2EM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -190,7 +191,7 @@
                     <navigationItem key="navigationItem" title="Plants" id="Cwi-oo-7b5">
                         <barButtonItem key="leftBarButtonItem" image="gearshape" catalog="system" id="2b8-DS-vqS">
                             <connections>
-                                <segue destination="EWU-mo-X7A" kind="show" id="Jly-vA-WtX"/>
+                                <segue destination="EWU-mo-X7A" kind="show" identifier="Settings" id="Jly-vA-WtX"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ID8-vl-J5l">
@@ -455,6 +456,13 @@
                                     <action selector="logoutButtonTapped:" destination="EWU-mo-X7A" eventType="touchUpInside" id="E44-wd-iGT"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Sbp-8Q-fR8">
+                                <rect key="frame" x="188.5" y="350" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="Fer-Yj-glG"/>
+                                    <constraint firstAttribute="height" constant="37" id="vBT-gH-RHp"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nlk-Sa-tq7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -465,13 +473,22 @@
                             <constraint firstItem="nlk-Sa-tq7" firstAttribute="trailing" secondItem="hKn-hT-mCw" secondAttribute="trailing" constant="20" id="dnm-mh-NhX"/>
                             <constraint firstItem="AgD-os-09q" firstAttribute="leading" secondItem="nlk-Sa-tq7" secondAttribute="leading" constant="20" id="eF2-lr-M1C"/>
                             <constraint firstItem="hKn-hT-mCw" firstAttribute="leading" secondItem="nlk-Sa-tq7" secondAttribute="leading" constant="20" id="eaR-GX-6EU"/>
+                            <constraint firstItem="Sbp-8Q-fR8" firstAttribute="centerX" secondItem="vdd-ij-zZA" secondAttribute="centerX" id="qhr-UU-IDL"/>
+                            <constraint firstItem="Sbp-8Q-fR8" firstAttribute="top" secondItem="doT-Pu-mMT" secondAttribute="bottom" constant="38" id="uHM-hb-C7Y"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="rBh-Xy-ZJw">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="o3M-hi-XUl"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="o3M-hi-XUl">
+                            <connections>
+                                <action selector="saveChangesButtonTapped:" destination="EWU-mo-X7A" id="6wF-aK-eI4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="Sbp-8Q-fR8" id="Yql-FI-Oss"/>
                         <outlet property="passwordTextField" destination="doT-Pu-mMT" id="cn9-BW-OsZ"/>
+                        <outlet property="saveButton" destination="o3M-hi-XUl" id="zvd-Mu-ZAk"/>
+                        <outlet property="usernameLabel" destination="kvb-v3-I9l" id="Zxr-nU-oei"/>
                         <outlet property="usernameTextField" destination="CaS-AO-5UG" id="HSK-LN-BN8"/>
                     </connections>
                 </viewController>
