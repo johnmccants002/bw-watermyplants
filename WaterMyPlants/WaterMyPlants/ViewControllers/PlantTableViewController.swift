@@ -10,13 +10,15 @@ import CoreData
 
 class PlantTableViewController: UITableViewController {
 
-    let plantController = PlantController()
     let localNotifications = LocalNotifications()
+    var user: User?
     
     lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
             
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+        guard let uid = UserDefaults.standard.string(forKey: "uid") else { return NSFetchedResultsController() }
+        fetchRequest.predicate = NSPredicate(format:"id = %@", uid as CVarArg)
         let moc = CoreDataStack.shared.managedObjectContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
                                              managedObjectContext: moc,
@@ -96,7 +98,7 @@ class PlantTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddPlant" {
             guard let destination = segue.destination as? AddPlantViewController else { return }
-            destination.plantController = self.plantController
+            destination.user = self.user
         } else if segue.identifier == "PlantDetail" {
             guard let destination = segue.destination as? PlantDetailViewController else { return }
             guard let selectedNumber = self.tableView.indexPathForSelectedRow else {return}

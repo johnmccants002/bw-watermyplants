@@ -6,13 +6,25 @@
 //
 
 import UIKit
+import CoreData
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    @objc func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+            
+            let userLoginStatus = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+            if(userLoginStatus)
+            {
+                let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let centerVC = mainStoryBoard.instantiateViewController(withIdentifier: "PlantTableViewController") as! PlantTableViewController
+                let nav = UINavigationController(rootViewController: centerVC)
+                self.window?.rootViewController = nav
+                self.window?.makeKeyAndVisible()
+            }
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).

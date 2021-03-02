@@ -8,6 +8,8 @@ target 'WaterMyPlants' do
   # Pods for WaterMyPlants
 
   pod 'SwiftLint'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
   target 'WaterMyPlantsTests' do
     inherit! :search_paths

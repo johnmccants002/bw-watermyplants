@@ -18,9 +18,9 @@ class PlantDetailViewController: UIViewController {
     @IBOutlet weak var speciesLabel: UILabel!
     @IBOutlet weak var plantImageView: UIImageView!
     @IBOutlet weak var nicknameLabel: UILabel!
-    var plant : Plant?
-    var object : NSManagedObject?
-    var localNotifications : LocalNotifications?
+    var plant: Plant?
+    var object: NSManagedObject?
+    var localNotifications: LocalNotifications?
     
     override func viewDidLoad() {
         super.viewDidLoad()

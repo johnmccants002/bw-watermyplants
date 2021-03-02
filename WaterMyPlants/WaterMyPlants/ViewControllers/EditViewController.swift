@@ -12,11 +12,12 @@ class EditViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var speciesTextField: UITextField!
     @IBOutlet weak var plantImageView: UIImageView!
+    @IBOutlet weak var frequencySegControl: UISegmentedControl!
     @IBOutlet weak var nicknameTextField: UITextField!
     
-    var newPlantImage : UIImage?
-    var plant : Plant?
-    var object : NSManagedObject?
+    var newPlantImage: UIImage?
+    var plant: Plant?
+    var object: NSManagedObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,15 +40,19 @@ class EditViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBAction func updateButtonTapped(_ sender: UIBarButtonItem) {
         guard let plant = plant else {return}
-        let newID = plant.id + 1
         guard let speciesText = speciesTextField.text, let nicknameText = nicknameTextField.text else { return }
         if let newPlantImage = newPlantImage {
-        CoreDataStack.shared.updatePlant(id: newID, frequency: "Often", image: newPlantImage.pngData(), nickname: nicknameText, species: speciesText, timestamp: Date(), plant: plant)
+            CoreDataStack.shared.updatePlant(id: plant.id, frequency: segControlString(), image: newPlantImage.pngData(), nickname: nicknameText, species: speciesText, timestamp: Date(), plant: plant)
             segueAndUpdate()
         } else {
-        CoreDataStack.shared.updatePlant(id: newID, frequency: "Often", image: nil, nickname: nicknameText, species: speciesText, timestamp: Date(), plant: plant)
+            CoreDataStack.shared.updatePlant(id: plant.id, frequency: segControlString(), image: nil, nickname: nicknameText, species: speciesText, timestamp: Date(), plant: plant)
             segueAndUpdate()
         }
+    }
+    func segControlString() -> String {
+        guard let title = self.frequencySegControl.titleForSegment(at: self.frequencySegControl.selectedSegmentIndex) else {return "Often"}
+        print(title)
+        return title
     }
     
     func segueAndUpdate() {

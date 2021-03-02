@@ -7,15 +7,29 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+    func application(_ application: UIApplication,
+      didFinishLaunchingWithOptions launchOptions:
+        [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+      FirebaseApp.configure()
+//        print("User Login Status: \(UserDefaults.standard.bool(forKey: "isUserLoggedIn"))")
+//        let userLoginStatus = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+//
+//            if(userLoginStatus)
+//            {
+//                let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                let centerVC = mainStoryBoard.instantiateViewController(withIdentifier: "PlantTableViewController") as! PlantTableViewController
+//                self.window = UIWindow(frame: UIScreen.main.bounds)
+//                self.window?.rootViewController = centerVC
+//                self.window?.makeKeyAndVisible()
+//            }
+      return true
     }
 
     // MARK: UISceneSession Lifecycle

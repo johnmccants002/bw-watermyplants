@@ -69,11 +69,6 @@ class CoreDataStack {
         return managedObjectContext
     }()
     
-//    var mainContext: NSManagedObjectContext {
-//        let context = container.viewContext
-//        context.automaticallyMergesChangesFromParent = true
-//        return context
-//    }
     func save(context: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext) throws {
         context.performAndWait {
             do {
@@ -89,7 +84,7 @@ class CoreDataStack {
             context.delete(object)
     }
     
-    func updatePlant(id: Int16, frequency: String, image: Data?, nickname: String, species: String, timestamp: Date, plant: Plant) {
+    func updatePlant(id: String?, frequency: String, image: Data?, nickname: String, species: String, timestamp: Date, plant: Plant) {
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
         fetchRequest.returnsObjectsAsFaults = false
         let context = CoreDataStack.shared.managedObjectContext

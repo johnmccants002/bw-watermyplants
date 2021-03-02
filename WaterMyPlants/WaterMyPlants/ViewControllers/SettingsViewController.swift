@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class SettingsViewController: UIViewController {
 
@@ -13,18 +15,21 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-    
+    @IBAction func logoutButtonTapped(_ sender: UIButton) {
+        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+            UserDefaults.standard.synchronize()
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        loginVC.modalPresentationStyle = .fullScreen
+        self.present(loginVC, animated: true) {
+            let firebaseAuth = Auth.auth()
+            do {
+            try firebaseAuth.signOut()
+            } catch let error as NSError {
+                print("Error signing out: %@", error)
+            }
     }
-    */
+    }
 
 }

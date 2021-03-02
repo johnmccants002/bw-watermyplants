@@ -16,14 +16,14 @@ extension Plant {
     }
 
     @NSManaged public var frequency: String?
-    @NSManaged public var id: Int16
+    @NSManaged public var id: String?
     @NSManaged public var image: Data?
     @NSManaged public var nickname: String?
     @NSManaged public var species: String?
     @NSManaged public var timestamp: Date?
-    @discardableResult convenience init(frequency: String?, id: Int, image: Data?, nickname: String?, species: String?, timestamp: Date?, context: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext) {
+    @discardableResult convenience init(frequency: String?, id: String?, image: Data?, nickname: String?, species: String?, timestamp: Date?, context: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext) {
         self.init(context: context)
-        self.id = Int16(id)
+        self.id = id
         self.image = image
         self.nickname = nickname
         self.species = species

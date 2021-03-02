@@ -9,7 +9,7 @@ import UIKit
 
 class AddPlantViewController: UIViewController, UINavigationControllerDelegate {
     
-    var plantController : PlantController?
+    var user : User?
     var plantImage : UIImage?
 
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -18,7 +18,6 @@ class AddPlantViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var frequencySegControl: UISegmentedControl!
     @IBOutlet weak var plantNicknameTextField: UITextField!
     @IBOutlet weak var speciesTextField: UITextField!
-    var id : Int = 1000
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,17 +30,14 @@ class AddPlantViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         
-        guard let plantController = plantController else { return }
         guard let plantNickname = plantNicknameTextField.text, !plantNickname.isEmpty else {
             return
         }
         
         guard let plantSpecies = speciesTextField.text, !plantSpecies.isEmpty else {return}
         
-        let plantID = id + plantController.plants.count
-        
         guard let plantImage = plantImage else {
-            Plant(frequency: segControlString(), id: plantID, image: nil, nickname: plantNickname, species: plantSpecies, timestamp: Date())
+            Plant(frequency: segControlString(), id: UserDefaults.standard.string(forKey: "uid"), image: nil, nickname: plantNickname, species: plantSpecies, timestamp: Date())
             do {
                 try CoreDataStack.shared.managedObjectContext.save()
             } catch {
@@ -52,7 +48,7 @@ class AddPlantViewController: UIViewController, UINavigationControllerDelegate {
             return
 
         }
-        Plant(frequency: segControlString(), id: plantID, image: plantImage.pngData(), nickname: plantNickname, species: plantSpecies, timestamp: Date())
+        Plant(frequency: segControlString(), id: UserDefaults.standard.string(forKey: "uid"), image: plantImage.pngData(), nickname: plantNickname, species: plantSpecies, timestamp: Date())
         
         do {
             try CoreDataStack.shared.managedObjectContext.save()
