@@ -14,7 +14,6 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     var user: User?
     let ref = PlantFirebaseController.shared.ref
@@ -63,6 +62,7 @@ class SettingsViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
                 self.activityIndicator.stopAnimating()
                 self.activityIndicator.isHidden = true
+                PlantFirebaseController.shared.getUsername()
                 let alert = UIAlertController(title: "Success", message: "Updated Profile", preferredStyle: .alert)
                             let action = UIAlertAction(title: "Ok", style: .default) { (action) in
                                  print("Successfully Completed 3")

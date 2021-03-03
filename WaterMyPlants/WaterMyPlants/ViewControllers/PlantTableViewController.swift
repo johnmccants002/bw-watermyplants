@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 
+
 class PlantTableViewController: UITableViewController {
 
     let localNotifications = LocalNotifications()
@@ -62,10 +63,15 @@ class PlantTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "plantCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "plantCell", for: indexPath) as? PlantTableViewCell else {return UITableViewCell()}
         
         let plant = fetchedResultsController.object(at: indexPath)
-        cell.textLabel?.text = plant.nickname
+        cell.nameLabel?.text = plant.nickname
+        guard let plantImage = plant.image else {
+            cell.imageView?.image = UIImage(named: "plant")
+            return cell
+        }
+        cell.imageView?.image = UIImage(data:plantImage)
 
         // Configure the cell...
 
