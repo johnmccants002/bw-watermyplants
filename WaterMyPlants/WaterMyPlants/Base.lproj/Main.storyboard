@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,17 +34,24 @@
                                     <segment title="Login"/>
                                     <segment title="Sign Up"/>
                                 </segments>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="LoginViewController.SegmentedControl"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginSegmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ipL-qc-uFj"/>
                                 </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FmS-OX-8dA">
                                 <rect key="frame" x="20" y="445" width="374" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="EmailTextField"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="mJU-lW-Bgc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="LoginViewController.EmailTextField"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seO-y6-hBm">
                                 <rect key="frame" x="20" y="402" width="374" height="21"/>
@@ -66,11 +73,15 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r7b-Mm-0k7">
                                 <rect key="frame" x="20" y="523" width="374" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="LoginViewController.PasswordTextField"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="nuU-G7-1TG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="LoginViewController.PasswordTextField"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AF6-ll-PQ7">
                                 <rect key="frame" x="20" y="582" width="374" height="21"/>
@@ -83,18 +94,26 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPp-oa-gNd">
                                 <rect key="frame" x="20" y="611" width="374" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="LoginViewController.UsernameTextField"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="ziR-Om-sak"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="LoginViewController.UsernameTextField"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVO-3u-5b8">
                                 <rect key="frame" x="20" y="663" width="374" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="LoginViewController.LoginSignUpButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="dXa-D1-NJs"/>
                                 </constraints>
                                 <state key="normal" title="Login"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="LoginViewController.LoginSignUpButton"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginSignUpButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tTA-Fz-h8H"/>
                                 </connections>
@@ -102,6 +121,9 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="LoginViewController">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="r7b-Mm-0k7" firstAttribute="top" secondItem="81U-mN-BRD" secondAttribute="bottom" constant="8" symbolic="YES" id="1HM-JB-QHr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r7b-Mm-0k7" secondAttribute="trailing" constant="20" id="5gy-b4-C5b"/>
@@ -132,6 +154,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZVO-3u-5b8" secondAttribute="trailing" constant="20" id="zwQ-xA-kEd"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="LoginViewController"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="emailTextField" destination="FmS-OX-8dA" id="Rgs-c7-ujI"/>
                         <outlet property="loginSegmentedControl" destination="xV6-1G-Unf" id="iKj-GM-Dze"/>
@@ -165,6 +190,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja5-rp-HQn">
                                             <rect key="frame" x="20" y="22" width="236" height="21"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Q6L-EY-Jnm"/>
                                                 <constraint firstAttribute="width" constant="236" id="s7O-um-GS2"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -173,6 +199,9 @@
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aws-Rb-zVl">
                                             <rect key="frame" x="359" y="11" width="35" height="42"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <bool key="isElement" value="YES"/>
+                                            </accessibility>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="35" id="DBT-eT-tgu"/>
                                                 <constraint firstAttribute="height" constant="35" id="cXe-0x-ub1"/>
@@ -188,6 +217,12 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="Ja5-rp-HQn" secondAttribute="bottom" constant="10" id="xBs-ry-dUB"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="PlantTableViewController.Cell"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="imageView" destination="aws-Rb-zVl" id="DRS-bb-1Mu"/>
                                     <outlet property="nameLabel" destination="Ja5-rp-HQn" id="fpG-GZ-QOQ"/>
@@ -195,6 +230,9 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="PlantsTableViewController.TableView"/>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="dwe-8D-r7H" id="blV-No-x0D"/>
                             <outlet property="delegate" destination="dwe-8D-r7H" id="eZo-Dr-xcf"/>
@@ -202,16 +240,28 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Plants" id="Cwi-oo-7b5">
                         <barButtonItem key="leftBarButtonItem" image="gearshape" catalog="system" id="2b8-DS-vqS">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="PlantTableViewController.Settings"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <segue destination="EWU-mo-X7A" kind="show" identifier="Settings" id="Jly-vA-WtX"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ID8-vl-J5l">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="PlantTableViewController.AddPlantButton"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <segue destination="8qU-J3-Ug1" kind="show" identifier="AddPlant" id="q1s-jc-zNd"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="PlantTableViewController.NavBar"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="PlantsTableViewController"/>
+                    </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1p-zU-Rax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -233,12 +283,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="PlantDetailViewController.NicknameLabel"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LAR-IZ-ywQ">
                                 <rect key="frame" x="87" y="144" width="240" height="186"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="186" id="OnF-bu-HwR"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="PlantDetailViewController.ImageView"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgL-4c-2ia">
                                 <rect key="frame" x="20" y="356" width="374" height="21"/>
@@ -248,6 +307,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="PlantDetailViewController.SpeciesLabel"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H2O Frequency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Se-ve-aCz">
                                 <rect key="frame" x="20" y="405" width="374" height="21"/>
@@ -257,6 +319,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="PlantDetailViewController.FrequencyLabel"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Raj-AU-Hfg">
                                 <rect key="frame" x="20" y="474" width="374" height="30"/>
@@ -264,6 +329,9 @@
                                     <constraint firstAttribute="height" constant="30" id="zYv-1G-fPs"/>
                                 </constraints>
                                 <state key="normal" title="Water Plant"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="PlantDetailViewController.WaterPlantButton"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="plantButtonTapped:" destination="4td-Oq-mPT" eventType="touchUpInside" id="ahr-7e-9cc"/>
                                 </connections>
@@ -271,6 +339,9 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Loy-hU-QFw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="LAR-IZ-ywQ" firstAttribute="top" secondItem="hDW-KZ-4MM" secondAttribute="bottom" constant="8" symbolic="YES" id="0v3-fR-qJA"/>
                             <constraint firstItem="Raj-AU-Hfg" firstAttribute="leading" secondItem="Loy-hU-QFw" secondAttribute="leading" constant="20" id="5pU-yP-qUG"/>
@@ -291,6 +362,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Plant" id="bNW-40-D1B">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="0fX-3N-KPp">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="PlantDetailViewController.EditButton"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="editButtonTapped:" destination="4td-Oq-mPT" id="Qy2-Md-dWm"/>
                                 <segue destination="fcv-ZJ-9gR" kind="show" identifier="EditPlant" id="DlL-Ed-Maj"/>
@@ -323,8 +397,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="141" id="JyT-GZ-6Sl"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="EditPlantViewController.ImageView"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Species" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gd9-HL-wnL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gd9-HL-wnL">
                                 <rect key="frame" x="20" y="198" width="374" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="CxY-Wp-PaV"/>
@@ -352,6 +429,9 @@
                                     <segment title="Twice a day"/>
                                     <segment title="Thrice a day"/>
                                 </segments>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="EditPlantViewController.SegmentedControl"/>
+                                </userDefinedRuntimeAttributes>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aoe-4l-GLB">
                                 <rect key="frame" x="20" y="227" width="374" height="34"/>
@@ -360,6 +440,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="EditPlantViewController.SpeciesTextField"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="72j-HV-TdM">
                                 <rect key="frame" x="20" y="140" width="374" height="34"/>
@@ -368,6 +451,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="EditPlantViewController.NicknameTextField"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="niF-sv-rvd">
                                 <rect key="frame" x="20" y="546" width="374" height="30"/>
@@ -375,6 +461,9 @@
                                     <constraint firstAttribute="height" constant="30" id="td2-B9-XZN"/>
                                 </constraints>
                                 <state key="normal" title="Edit Photo"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="EditPlantViewController.EditPhotoButton"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addPhotoTapped:" destination="8qU-J3-Ug1" eventType="touchUpInside" id="dhS-Ts-5fg"/>
                                     <action selector="editPhotoButtonTapped:" destination="fcv-ZJ-9gR" eventType="touchUpInside" id="0Ee-CQ-6jE"/>
@@ -383,11 +472,15 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nsd-Fw-VWT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="niF-sv-rvd" firstAttribute="top" secondItem="Kd6-8b-SA8" secondAttribute="bottom" constant="32" id="0YU-3i-jDm"/>
                             <constraint firstItem="Nsd-Fw-VWT" firstAttribute="trailing" secondItem="Kd6-8b-SA8" secondAttribute="trailing" constant="136" id="1ar-45-kQO"/>
                             <constraint firstItem="niF-sv-rvd" firstAttribute="leading" secondItem="Nsd-Fw-VWT" secondAttribute="leading" constant="20" id="1m5-ft-5ZI"/>
                             <constraint firstItem="72j-HV-TdM" firstAttribute="leading" secondItem="Nsd-Fw-VWT" secondAttribute="leading" constant="20" id="3s7-VM-T3Z"/>
+                            <constraint firstItem="Nsd-Fw-VWT" firstAttribute="trailing" secondItem="Gd9-HL-wnL" secondAttribute="trailing" constant="20" id="Hf2-nW-6IM"/>
                             <constraint firstItem="Kd6-8b-SA8" firstAttribute="top" secondItem="BdI-ao-cJB" secondAttribute="bottom" constant="42" id="L3l-VE-kr3"/>
                             <constraint firstItem="Kd6-8b-SA8" firstAttribute="leading" secondItem="Nsd-Fw-VWT" secondAttribute="leading" constant="137" id="MBh-nS-vEa"/>
                             <constraint firstItem="Gd9-HL-wnL" firstAttribute="top" secondItem="72j-HV-TdM" secondAttribute="bottom" constant="24" id="MPm-hS-pTi"/>
@@ -400,6 +493,7 @@
                             <constraint firstItem="72j-HV-TdM" firstAttribute="top" secondItem="tbc-hY-Dvx" secondAttribute="bottom" constant="8" symbolic="YES" id="g1o-iq-qoQ"/>
                             <constraint firstItem="BdI-ao-cJB" firstAttribute="top" secondItem="aoe-4l-GLB" secondAttribute="bottom" constant="39" id="hwA-dB-EYw"/>
                             <constraint firstItem="aoe-4l-GLB" firstAttribute="leading" secondItem="Nsd-Fw-VWT" secondAttribute="leading" constant="20" id="lqS-hq-kly"/>
+                            <constraint firstItem="Gd9-HL-wnL" firstAttribute="leading" secondItem="Nsd-Fw-VWT" secondAttribute="leading" constant="20" id="pdH-8i-xTO"/>
                             <constraint firstItem="Nsd-Fw-VWT" firstAttribute="trailing" secondItem="niF-sv-rvd" secondAttribute="trailing" constant="20" id="tzc-yA-BmD"/>
                             <constraint firstItem="tbc-hY-Dvx" firstAttribute="top" secondItem="Nsd-Fw-VWT" secondAttribute="top" constant="23" id="w8v-JJ-S5b"/>
                             <constraint firstItem="Nsd-Fw-VWT" firstAttribute="trailing" secondItem="72j-HV-TdM" secondAttribute="trailing" constant="20" id="wXF-bF-k3U"/>
@@ -407,6 +501,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Edit Plant" id="SZ0-zI-Blh">
                         <barButtonItem key="rightBarButtonItem" title="Update" id="id4-QE-Ix6">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="EditPlantViewController.UpdateButton"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="updateButtonTapped:" destination="fcv-ZJ-9gR" id="wDL-h2-6A9"/>
                             </connections>
@@ -447,13 +544,20 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="SettingsViewController.UsernameTextField"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKn-hT-mCw">
                                 <rect key="frame" x="20" y="433" width="374" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="LogoutButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="YYm-gT-KdJ"/>
                                 </constraints>
                                 <state key="normal" title="Logout"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="SettingsViewController.LogoutButton"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="logoutButtonTapped:" destination="EWU-mo-X7A" eventType="touchUpInside" id="E44-wd-iGT"/>
                                 </connections>
@@ -464,10 +568,16 @@
                                     <constraint firstAttribute="width" constant="37" id="Fer-Yj-glG"/>
                                     <constraint firstAttribute="height" constant="37" id="vBT-gH-RHp"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="SettingsViewController.ActivityIndicator"/>
+                                </userDefinedRuntimeAttributes>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nlk-Sa-tq7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="kvb-v3-I9l" firstAttribute="top" secondItem="nlk-Sa-tq7" secondAttribute="top" constant="40" id="Hha-oz-oWc"/>
                             <constraint firstItem="CaS-AO-5UG" firstAttribute="top" secondItem="kvb-v3-I9l" secondAttribute="bottom" constant="25" id="M8f-G6-fBZ"/>
@@ -484,11 +594,20 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="rBh-Xy-ZJw">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="o3M-hi-XUl">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="SettingsViewController.SaveButton"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="saveChangesButtonTapped:" destination="EWU-mo-X7A" id="6wF-aK-eI4"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="SettingsViewController.NavigationBar"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="SettingsViewController"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="activityIndicator" destination="Sbp-8Q-fR8" id="Yql-FI-Oss"/>
                         <outlet property="saveButton" destination="o3M-hi-XUl" id="zvd-Mu-ZAk"/>
@@ -515,6 +634,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="AddPlantViewController.NicknameTextField"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbO-j4-bFt">
                                 <rect key="frame" x="20" y="122" width="374" height="21"/>
@@ -541,6 +663,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="AddPlantViewController.SpeciesTextField"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fWw-pL-oK2">
                                 <rect key="frame" x="20" y="311" width="374" height="32"/>
@@ -552,6 +677,9 @@
                                     <segment title="Twice a day"/>
                                     <segment title="Thrice a day"/>
                                 </segments>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="AddPlantViewController.SegmentedControl"/>
+                                </userDefinedRuntimeAttributes>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3j4-JW-xmU">
                                 <rect key="frame" x="20" y="557" width="374" height="30"/>
@@ -559,6 +687,9 @@
                                     <constraint firstAttribute="height" constant="30" id="CNj-07-fwV"/>
                                 </constraints>
                                 <state key="normal" title="Add Photo"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="AddPlantViewController.AddPhotoButton"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addPhotoTapped:" destination="8qU-J3-Ug1" eventType="touchUpInside" id="22q-rr-2bY"/>
                                 </connections>
@@ -568,6 +699,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="141" id="O5K-tD-lqA"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="AddPlantViewController.ImageView"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wMi-4W-Pmv"/>
@@ -598,6 +732,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Plant" id="YIt-WY-TfQ">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="ee0-SH-RfD">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="AddPlantViewController.SaveButton"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="saveButtonTapped:" destination="8qU-J3-Ug1" id="HSj-oe-h1k"/>
                             </connections>
@@ -627,6 +764,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="WaterMyPlantsNavigationController"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="dwe-8D-r7H" kind="relationship" relationship="rootViewController" id="Nyg-YY-xP6"/>
                     </connections>

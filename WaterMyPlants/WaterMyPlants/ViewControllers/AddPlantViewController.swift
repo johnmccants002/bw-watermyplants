@@ -9,8 +9,8 @@ import UIKit
 
 class AddPlantViewController: UIViewController, UINavigationControllerDelegate {
     
-    var user : User?
-    var plantImage : UIImage?
+    var user: User?
+    var plantImage: UIImage?
 
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var addPhotoButton: UIButton!
@@ -21,7 +21,6 @@ class AddPlantViewController: UIViewController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        segControlString()
     }
     
     @IBAction func addPhotoTapped(_ sender: UIButton) {
@@ -93,7 +92,7 @@ extension AddPlantViewController: UIImagePickerControllerDelegate {
     picker.sourceType = .photoLibrary
     present(picker, animated: true)
     }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
     guard let userPickedImage = info[.editedImage] as? UIImage else { return }
     plantImageView.image = userPickedImage
     self.plantImage = userPickedImage

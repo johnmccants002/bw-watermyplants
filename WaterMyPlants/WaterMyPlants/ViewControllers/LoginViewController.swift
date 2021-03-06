@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
-    var user : User?
+    var user: User?
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
@@ -36,19 +36,16 @@ class LoginViewController: UIViewController {
             guard let usernameText = self.usernameTextField.text, !usernameText.isEmpty else {
                 self.presentAlert(missingField: "Username")
                 return }
-            
             Auth.auth().createUser(withEmail: emailText, password: passwordText) { (authDataResult, error) in
-                
                 if error != nil {
                     self.presentAlert(missingField: "Unable to create a user")
                 }
                 if let authData = authDataResult, let authEmail = authData.user.email {
                     print(authEmail)
-                    var dict: [String: Any] = [
+                    let dict: [String: Any] = [
                         "uid": authData.user.uid,
                         "username": usernameText,
                         "email": authEmail                        ]
-
                     Database.database().reference().child("users").child(authData.user.uid).updateChildValues(dict, withCompletionBlock: { (error, _) in
                         if error == nil {
                             let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -61,8 +58,6 @@ class LoginViewController: UIViewController {
                             let nav = UINavigationController(rootViewController: centerVC)
                             nav.modalPresentationStyle = .fullScreen
                             self.present(nav, animated: true, completion: nil)
-                            
-                            print("Done")
                         }
                 })
         }
@@ -83,9 +78,8 @@ class LoginViewController: UIViewController {
                 let nav = UINavigationController(rootViewController: centerVC)
                 nav.modalPresentationStyle = .fullScreen
                 self.present(nav, animated: true, completion: nil)
-                
             }
-            }
+    }
     }
     
     @IBAction func loginSegmentChanged(_ sender: UISegmentedControl) {
@@ -119,17 +113,11 @@ class LoginViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    
-    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SignedIn" {
             guard let destination = segue.destination as? PlantTableViewController else {return}
             destination.user = self.user
         }
     }
-
-
 }

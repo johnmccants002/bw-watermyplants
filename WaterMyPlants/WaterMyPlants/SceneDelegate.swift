@@ -17,8 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     @objc func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
             
             let userLoginStatus = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
-            if(userLoginStatus)
-            {
+            if userLoginStatus {
                 let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let centerVC = mainStoryBoard.instantiateViewController(withIdentifier: "PlantTableViewController") as! PlantTableViewController
                 let nav = UINavigationController(rootViewController: centerVC)

@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       didFinishLaunchingWithOptions launchOptions:
         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       FirebaseApp.configure()
+        return true
            }
-      return true
-    }
+
 
     // MARK: UISceneSession Lifecycle
 

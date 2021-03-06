@@ -19,7 +19,7 @@ class PlantTableViewController: UITableViewController {
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
         guard let uid = UserDefaults.standard.string(forKey: "uid") else { return NSFetchedResultsController() }
-        fetchRequest.predicate = NSPredicate(format:"id = %@", uid as CVarArg)
+        fetchRequest.predicate = NSPredicate(format: "id = %@", uid as CVarArg)
         let moc = CoreDataStack.shared.managedObjectContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
                                              managedObjectContext: moc,
@@ -71,7 +71,7 @@ class PlantTableViewController: UITableViewController {
             cell.imageView?.image = UIImage(named: "plant")
             return cell
         }
-        cell.imageView?.image = UIImage(data:plantImage)
+        cell.imageView?.image = UIImage(data: plantImage)
 
         // Configure the cell...
 

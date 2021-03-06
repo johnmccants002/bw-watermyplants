@@ -68,6 +68,7 @@ class SettingsViewController: UIViewController {
                                  print("Successfully Completed 3")
                             
             }
+                alert.accessibilityLabel = "SettingsViewController.Alert"
             alert.addAction(action)
             self.present(alert, animated: true)
         }

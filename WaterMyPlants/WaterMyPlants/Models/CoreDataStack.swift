@@ -91,7 +91,6 @@ class CoreDataStack {
         fetchRequest.predicate = NSPredicate(format:"timestamp = %@", plant.timestamp! as CVarArg)
 
         let result = try? context.fetch(fetchRequest)
-        print(result?.count)
         if result?.count == 1 {
 
             let dict = result![0]

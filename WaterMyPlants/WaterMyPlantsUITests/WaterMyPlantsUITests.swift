@@ -41,39 +41,28 @@ class WaterMyPlantsUITests: XCTestCase {
     }
     
     func testCreatePlantWithoutImage() throws {
-        
-        let app = XCUIApplication()
-        app.activate()
-        app.navigationBars["Plants"].buttons["Add"].tap()
-        
-        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
-        element.children(matching: .textField).element(boundBy: 0).tap()
-        
-        let textField = element.children(matching: .textField).element(boundBy: 1)
-        textField.tap()
-        textField.tap()
-        app/*@START_MENU_TOKEN@*/.buttons["Twice a day"]/*[[".segmentedControls.buttons[\"Twice a day\"]",".buttons[\"Twice a day\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app.navigationBars["Add Plant"].buttons["Save"].tap()
                 
     }
     
     func testCreatePlantWithImage() throws {
         
-        let app = XCUIApplication()
-        app.activate()
-        app.navigationBars["Plants"].buttons["Add"].tap()
-        
-        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
-        element.children(matching: .textField).element(boundBy: 0).tap()
-        
-        let textField = element.children(matching: .textField).element(boundBy: 1)
-        textField.tap()
-        textField.tap()
-        
-        app/*@START_MENU_TOKEN@*/.buttons["Thrice a day"]/*[[".segmentedControls.buttons[\"Thrice a day\"]",".buttons[\"Thrice a day\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app/*@START_MENU_TOKEN@*/.staticTexts["Add Photo"]/*[[".buttons[\"Add Photo\"].staticTexts[\"Add Photo\"]",".staticTexts[\"Add Photo\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app.scrollViews.otherElements.images["Photo, March 30, 2018, 12:14 PM"].tap()
-
-        
+    }
+    
+    func testLogoutLogin() throws {
+                        
+                        
+         
+    }
+    
+    func testLoginLogout() throws {
+                
+    }
+    
+    func testEditUsername() throws {
+           
+    }
+    
+    func testEditPlant() throws {
+                
     }
 }

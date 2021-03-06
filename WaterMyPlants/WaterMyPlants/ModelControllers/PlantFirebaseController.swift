@@ -49,7 +49,7 @@ class PlantFirebaseController {
                     let dict: [String: Any] = [
                         "uid": authResult.user.uid,
                         "username": username,
-                        "email": authResult.user.email
+                        "email": email
                         ]
                 
                 self.currentUser = User(username: username, email: email, uid: authResult.user.uid)
@@ -73,12 +73,10 @@ class PlantFirebaseController {
         self.ref.child("users/\(uid)/username").getData { (error, snapshot) in
             if let error = error {
                 print("Error getting data \(error)")
-            }
-            else if snapshot.exists() {
+            } else if snapshot.exists() {
                 print("Got data \(snapshot.value!)")
                 self.username = snapshot.value as! String
-            }
-            else {
+            } else {
                 print("No data available")
             }
         }
@@ -86,7 +84,7 @@ class PlantFirebaseController {
     
     func updateUsername(username: String) {
         if let userID = Auth.auth().currentUser?.uid {
-            var dict: [String: Any] = [
+            let dict: [String: Any] = [
             "username": username
             ]
             Database.database().reference().child("users").child(userID).updateChildValues(dict, withCompletionBlock: { (error, _) in

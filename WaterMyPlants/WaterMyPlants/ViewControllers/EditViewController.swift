@@ -71,7 +71,7 @@ extension EditViewController: UIImagePickerControllerDelegate {
     picker.sourceType = .photoLibrary
     present(picker, animated: true)
     }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
     guard let userPickedImage = info[.editedImage] as? UIImage else { return }
     plantImageView.image = userPickedImage
     self.newPlantImage = userPickedImage
